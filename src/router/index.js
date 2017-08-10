@@ -9,6 +9,7 @@ import H12 from '@/components/H1-2'
 import H2 from '@/components/H2'
 import a1 from '@/components/a1'
 import a2 from '@/components/a2'
+import Error from '@/components/Error'
 
 Vue.use(Router)
 
@@ -29,9 +30,13 @@ export default new Router({
       component: Count
     },
     {
+      path: '*',
+      component: Error
+    },
+    {
       path: '/Hi',
-      name: 'Hi',
-      component: Hi
+      component: Hi,
+      alias: '/smr'
     },
     {
       path: '/redirect',

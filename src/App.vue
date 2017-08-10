@@ -10,8 +10,11 @@
       <router-link to="/a1">多页面-1</router-link>
       <router-link to="/a2">多页面-2</router-link>
       <router-link to="/red">redirect</router-link>
+      <router-link to="/smr">smr</router-link>
     </div>
-    <router-view></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
     <router-view name="left" style="float:left;width:50%;background-color:#ccc;height:300px;"></router-view>
     <router-view name="right" style="float:right;width:50%;background-color:#c0c;height:300px;"></router-view>
   </div>
@@ -31,5 +34,18 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.fade-enter {
+  opacity:0;
+}
+.fade-leave{
+  opacity:1;
+}
+.fade-enter-active{
+  transition:opacity .5s;
+}
+.fade-leave-active{
+  opacity:0;
+  transition:opacity .5s;
 }
 </style>
